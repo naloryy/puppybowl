@@ -2,11 +2,7 @@ import React from "react";
 import { Navbar } from "./";
 
 const Main = () => {
-    return(
-        <div id="main">
-            <Navbar />
-        </div>
-    )
-}
+  return <div id="main">{<Navbar />}</div>;
+};
 
-export default Main
+export default Main;
