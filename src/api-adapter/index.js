@@ -5,7 +5,6 @@ export const fetchPuppies = async () => {
   try {
     const response = await fetch(BaseUrl);
     const result = await response.json();
-    console.log(result.data.players, "response");
     return result.data.players;
   } catch (error) {
     console.log(error);

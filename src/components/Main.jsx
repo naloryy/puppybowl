@@ -16,7 +16,6 @@ const Main = () => {
   useEffect(() => {
     getAllPuppies();
   }, []);
-  console.log(fetchPuppies());
 
   return (
     <div id="main">

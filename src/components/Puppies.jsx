@@ -1,6 +1,6 @@
 import React from "react";
 
-function Puppies() {
+function Puppies(props) {
   return <div>Puppies</div>;
 }
 
