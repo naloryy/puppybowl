@@ -11,3 +11,10 @@ body {
     max-height: 10%;
     min-height: 40px;
 }
+
+.pups {
+    display: flex;
+    border: 1px solid black;
+    width: 400px;
+    margin: 0 auto;
+}
