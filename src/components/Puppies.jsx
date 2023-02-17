@@ -7,9 +7,11 @@ const Puppies = (props) => {
     <div>
       {allPuppies.map((puppie, idx) => {
         return (
-          <div key={idx} className="pups">
-            <h3>{puppie.name}</h3>
-            <h3>{puppie.breed}</h3>
+          <div className="container">
+            <div key={idx} id="cardContainer" className="pups">
+              <h3 id="name">{puppie.name}</h3>
+              <img className="pupsImg" src={puppie.imageUrl} alt="" />
+            </div>
           </div>
         );
       })}

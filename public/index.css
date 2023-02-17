@@ -13,8 +13,18 @@ body {
 }
 
 .pups {
-    display: flex;
+    display: grid;
     border: 1px solid black;
     width: 400px;
     margin: 0 auto;
+    margin: 1rem;
+}
+
+#name {
+    text-align: center;
+}
+
+.pupsImg {
+    width: 400px;
+
 }
