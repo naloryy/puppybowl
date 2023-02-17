@@ -6,6 +6,7 @@ const Puppies = (props) => {
   return (
     <div className="container">
       {allPuppies.map((puppy, idx) => {
+        console.log(allPuppies);
         return (
           <div key={idx} id="cardContainer" className="pups">
             <h3 id="name">{puppy.name}</h3>
