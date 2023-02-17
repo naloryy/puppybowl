@@ -1,26 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "./";
 import { Puppies } from "./";
 import { fetchPuppies } from "../api-adapter";
 /////
 
 const Main = () => {
-  const [allPuppies, setallPuppies] = useState([]);
+  const [allPuppies, setAllPuppies] = useState([]);
 
-  async function getPuppies() {
+  async function getAllPuppies() {
     try {
-      const allPuppies = await fetch(
-        "https://fsa-puppy-bowl.herokuapp.com/api/2301-FTB-ET-WEB-FT/players"
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+      const allPupps = await fetchPuppies();
+      setAllPuppies("allPupps");
+    } catch (error) {}
   }
+
+  useEffect(() => {
+    getAllPuppies();
+  }, []);
+
   return (
     <div id="main">
       {<Navbar />}
-      <Puppies />
+      <Puppies allPuppies={allPuppies} />
     </div>
   );
 };
