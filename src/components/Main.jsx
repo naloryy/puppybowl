@@ -10,7 +10,7 @@ const Main = () => {
   async function getAllPuppies() {
     try {
       const allPupps = await fetchPuppies();
-      setAllPuppies("allPupps");
+      setAllPuppies(allPupps);
     } catch (error) {}
   }
 
