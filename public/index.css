@@ -16,18 +16,12 @@ body {
 #cardContainer {
     display: flex;
     flex-direction: column;
-
-    justify-content: space-around;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, 130px);
-    gap: 1rem; */
 }
 
 .pups {
@@ -39,11 +33,19 @@ body {
     margin: 1rem;
 }
 
+.button {
+    border-radius: 10px;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
 #name {
     text-align: center;
 }
 
 .pupsImg {
     width: 400px;
+    padding-bottom: 1rem;
 
 }

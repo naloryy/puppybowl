@@ -10,7 +10,7 @@ const Puppies = (props) => {
           <div key={idx} id="cardContainer" className="pups">
             <h3 id="name">{puppie.name}</h3>
             <img className="pupsImg" src={puppie.imageUrl} alt="" />
-            <button>details</button>
+            <button className="button">details</button>
           </div>
         );
       })}
