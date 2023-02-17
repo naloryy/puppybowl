@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar } from "./";
-import { Puppies } from "./";
-import { fetchPuppies } from "../api-adapter/index";
+import { fetchPuppies } from "../api-adapter";
+/////
 
 const Main = () => {
-  const [allPuppies, setAllPuppies] = useState([]);
+    return(
+        <div id="main">
 
-  async function getAllPuppies() {
-    try {
-      const allPupps = await fetchPuppies();
-      console.log("allPupps");
-    } catch (error) {}
-  }
-  console.log(fetchPuppies());
+            <Navbar/>
+        </div>
+    )
+}
 
-  return <div id="main">{<Navbar />}</div>;
-};
-
-export default Main;
+export default Main
