@@ -1,30 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import { fetchPuppies } from "../api-adapter";
+import { Link, Outlet } from "react-router-dom";
 
-function Search() {
+function Search(props) {
   const [name, setName] = useState("");
-  const [breed, setBreed] = useState("");
 
-  async function sentToDataBase(name, breed) {
+  async function sendPuppyData(name) {
     try {
-      console.log("hello");
-      const getName = await fetchPuppies();
-      const getPuppies = getName.filter(
-        (puppy) => puppy.name && (breed ? puppy.breed : true)
-      );
-      console.log(getPuppies);
+      const filterArray = props.allPuppies.filter((pup, inx) => {
+        return pup.name === name;
+      });
+      setName(" ");
+      props.sendPuppyData(filterArray);
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <div>
+    <div className="search">
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          sentToDataBase(name, breed);
+          sendPuppyData(name);
         }}
       >
         <label>
@@ -39,20 +37,11 @@ function Search() {
             }}
           />
         </label>
-        <label>
-          Breed:
-          <input
-            name="breed"
-            type="text"
-            value={breed}
-            onChange={(event) => {
-              console.log(event.target.value);
-              setBreed(event.target.value);
-            }}
-          />
-        </label>
-        <button type="submit">Submit</button>
+        <Link to={`http://localhost:3000/${name.idx}`}>
+          <button type="submit">Search</button>
+        </Link>
       </form>
+      <Outlet />
     </div>
   );
 }

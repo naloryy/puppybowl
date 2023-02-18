@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "./";
+import { Outlet } from "react-router-dom";
 import { Puppies } from "./";
 import { fetchPuppies } from "../api-adapter";
 import { Search } from "./";
@@ -20,9 +20,9 @@ const Main = () => {
 
   return (
     <div id="main">
-      {<Navbar />}
-      <Puppies allPuppies={allPuppies} />
       {<Search />}
+      <Puppies allPuppies={allPuppies} />
+      <Outlet />
     </div>
   );
 };
