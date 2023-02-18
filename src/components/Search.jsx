@@ -37,9 +37,8 @@ function Search(props) {
             }}
           />
         </label>
-        <Link to={`http://localhost:3000/${name.idx}`}>
-          <button type="submit">Search</button>
-        </Link>
+
+        <button type="submit">Search</button>
       </form>
       <Outlet />
     </div>
